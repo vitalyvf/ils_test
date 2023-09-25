@@ -37,9 +37,9 @@ class ShippingService
      */
     public function calculateShipping($service, $params)
     {
-        $source_kladr = $params['source_kladr'];
-        $target_kladr = $params['target_kladr'];
-        $weight = $params['weight'];
+        $source_kladr = isset($params['source_kladr']) ? $params['source_kladr'] : "";
+        $target_kladr = isset($params['target_kladr']) ? $params['target_kladr'] : "";
+        $weight = isset($params['weight']) ? $params['weight'] : "";
 
         $error = self::checkCommonErrors($source_kladr, $target_kladr, $weight);
 	if (!empty($error)) {
