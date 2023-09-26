@@ -17,19 +17,19 @@ class SlowDelivery implements IService
      *
      * @var float $coefficient
      */
-    public $coefficient;
+    private $coefficient;
     /**
      * Delivery date
      *
      * @var string $date
      */
-    public $date;
+    private $date;
     /**
      * Error message
      *
      * @var string $error
      */
-    public $error;
+    private $error;
 
     public function __construct($source_kladr, $target_kladr, $weight)
     {
@@ -39,8 +39,8 @@ class SlowDelivery implements IService
             $this->date = "";
             $this->error = $error;
         } else {
-            $this->coefficient = self::calculateShippingTime($source_kladr, $target_kladr, $weight);;
-            $this->date = self::calculateShippingCost($source_kladr, $target_kladr, $weight);
+            $this->coefficient = self::calculateShippingCost($source_kladr, $target_kladr, $weight);
+            $this->date = self::calculateShippingTime($source_kladr, $target_kladr, $weight);
             $this->error = "";
         }
     }

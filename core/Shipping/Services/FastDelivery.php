@@ -13,19 +13,19 @@ class FastDelivery implements IService
      *
      * @var float $price
      */
-    public $price;
+    private $price;
     /**
      * Shipping period
      *
      * @var int $period
      */
-    public $period;
+    private $period;
     /**
      * Error message
      *
      * @var string $error
      */
-    public $error;
+    private $error;
 
     /**
      * Calculate shipping cost and time or set error message
